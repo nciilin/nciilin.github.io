@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>CSS布局</title>
+      <link href="/2018/12/11/CSS%E5%B8%83%E5%B1%80/"/>
+      <url>/2018/12/11/CSS%E5%B8%83%E5%B1%80/</url>
+      
+        <content type="html"><![CDATA[<h2 id="本文主要包括以下内容："><a href="#本文主要包括以下内容：" class="headerlink" title="本文主要包括以下内容："></a>本文主要包括以下内容：</h2><ol><li>左右布局</li><li>左中右布局</li><li>水平居中</li><li>垂直居中</li><li>等其他小技巧</li></ol><h3 id="1、左右布局（两栏布局）"><a href="#1、左右布局（两栏布局）" class="headerlink" title="1、左右布局（两栏布局）"></a>1、左右布局（两栏布局）</h3><ul><li>两栏布局： <strong>一栏定宽，一栏自适应</strong>。</li><li>链接:<br><a href="http://js.jirengu.com/ruzogewubi/1/edit?html,css,output" target="_blank" rel="noopener">两栏布局</a></li></ul><h3 id="2、左中右布局-三栏布局"><a href="#2、左中右布局-三栏布局" class="headerlink" title="2、左中右布局(三栏布局)"></a>2、左中右布局(三栏布局)</h3><ul><li>三栏布局：<strong>两边定宽，然后中间的width是auto自适应内容</strong>。</li><li>链接:<br><a href="http://js.jirengu.com/dezilezuke/1/edit?html,css,output" target="_blank" rel="noopener">三栏布局</a></li></ul><h3 id="3、水平居中"><a href="#3、水平居中" class="headerlink" title="3、水平居中"></a>3、水平居中</h3><ul><li>flex实现水平居中: <strong>Flexbox布局自适应调整和分布一个容器里的项目布局，即使他们的大小是未知或者是动态的</strong>。</li><li>链接:<br><a href="http://js.jirengu.com/wisegaguco/1/edit?html,css,output" target="_blank" rel="noopener">flex水平居中</a></li></ul><h3 id="4、垂直居中"><a href="#4、垂直居中" class="headerlink" title="4、垂直居中"></a>4、垂直居中</h3><ul><li>绝对定位与负边距实现: <strong>利用绝对定位，将元素的top和left属性都设为50%，再利用margin边距，将元素回拉它本身高宽的一半，实现垂直居中。</strong></li><li>链接:<br><a href="http://js.jirengu.com/nolikenemi/1/edit?html,css,output" target="_blank" rel="noopener">绝对定位与负边距实现</a></li><li>绝对定位与margin: <strong>利用绝对定位与margin，但是无需知道被垂直居中元素的高和宽</strong>。</li><li>链接:<br><a href="http://js.jirengu.com/huzetituqu/1/edit" target="_blank" rel="noopener">绝对定位与margin</a></li></ul><h3 id="5、等其他小技巧"><a href="#5、等其他小技巧" class="headerlink" title="5、等其他小技巧"></a>5、等其他小技巧</h3><ul><li>水平垂直居中(flex布局)</li><li>链接<br><a href="http://js.jirengu.com/limoyefato/1/edit?html,css,output" target="_blank" rel="noopener">水平垂直居中flex布局</a></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>CSS</title>
       <link href="/2018/12/10/CSS/"/>
       <url>/2018/12/10/CSS/</url>
