@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>JS里的数据类型</title>
+      <link href="/2019/07/05/JS%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2019/07/05/JS%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="JavaScript的七种数据类型"><a href="#JavaScript的七种数据类型" class="headerlink" title="JavaScript的七种数据类型"></a>JavaScript的七种数据类型</h2><h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><p>数值<code>number</code>、字符串<code>string</code>、布尔值<code>Boolean</code>、<code>symbol</code>、<code>undefined</code>、<code>null</code></p><h3 id="复杂类型"><a href="#复杂类型" class="headerlink" title="复杂类型"></a>复杂类型</h3><p>对象<code>object</code>— 狭义的对象<code>object</code>、数组<code>array</code>、函数<code>function</code></p><h2 id="null-和-undefined的区别"><a href="#null-和-undefined的区别" class="headerlink" title="null 和 undefined的区别"></a>null 和 undefined的区别</h2><ul><li>当变量没有赋值时— undefined</li><li>有对象<code>object</code>,但还没赋值 — null</li><li>有非对象<code>object</code>,不想赋值 — undefined</li></ul><h3 id="JavaScript三种方法确定数据类型"><a href="#JavaScript三种方法确定数据类型" class="headerlink" title="JavaScript三种方法确定数据类型"></a>JavaScript三种方法确定数据类型</h3><blockquote><p>typeof运算符<br>instanceof运算符<br>Object.prototype.toString方法</p></blockquote><h2 id="JavaScript内容详细内容"><a href="#JavaScript内容详细内容" class="headerlink" title="JavaScript内容详细内容"></a>JavaScript内容详细内容</h2><p><a href="https://wangdoc.com/javascript/" target="_blank" rel="noopener">阮一峰JavaScript教程</a><br><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="noopener">阮一峰</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>CSS布局</title>
       <link href="/2018/12/11/CSS%E5%B8%83%E5%B1%80/"/>
       <url>/2018/12/11/CSS%E5%B8%83%E5%B1%80/</url>
