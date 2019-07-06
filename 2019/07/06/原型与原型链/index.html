@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        原型与原型链 - undefined
         
     </title>
 
@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li class="active">
+            <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#全局对象-window"><span class="toc-text">全局对象 window</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全局函数"><span class="toc-text">全局函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型"><span class="toc-text">原型</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -111,140 +115,49 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-06</div>
-        <div class="post-info">
-            <a href="/2019/07/06/原型与原型链/">
-                <h3>
-                    原型与原型链
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-05</div>
-        <div class="post-info">
-            <a href="/2019/07/05/里的数据类型转换/">
-                <h3>
-                    JS里的数据类型转换
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-05</div>
-        <div class="post-info">
-            <a href="/2019/07/05/JS里的数据类型/">
-                <h3>
-                    JS里的数据类型
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-11</div>
-        <div class="post-info">
-            <a href="/2018/12/11/CSS布局/">
-                <h3>
-                    CSS布局
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-10</div>
-        <div class="post-info">
-            <a href="/2018/12/10/CSS/">
-                <h3>
-                    CSS
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-09</div>
-        <div class="post-info">
-            <a href="/2018/12/09/HTML-Common/">
-                <h3>
-                    HTML_Common
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-08</div>
-        <div class="post-info">
-            <a href="/2018/12/08/HTML/">
-                <h3>
-                    HTML
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-07</div>
-        <div class="post-info">
-            <a href="/2018/12/07/HTTP/">
-                <h3>
-                    HTTP
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-07</div>
-        <div class="post-info">
-            <a href="/2018/12/07/开博大吉/">
-                <h3>
-                    开博大吉
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
-</ul>
 
+
+<div class="post-container">
+    <div class="post-title">
+        原型与原型链
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-07-06 18:48:58</span></span>
+        
+        
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="全局对象-window"><a href="#全局对象-window" class="headerlink" title="全局对象 window"></a>全局对象 window</h2><p><strong>window 的属性就是全局变量。</strong><br>window属性：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document" target="_blank" rel="noopener">window</a></p>
+<h2 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h2><ol>
+<li>Number<br><code>var n = new Number()</code>创建一个 Number 对象</li>
+<li>String<br><code>var s = new String(&#39;hello&#39;)</code> 创建一个 String 对象</li>
+<li>Boolean<br><code>var b = new Boolean(true)</code> 创建一个 Boolean 对象</li>
+<li>Object<br><code>var o1 = {}</code> 创建一个 Object 对象<br><code>(var o2 = new Object()</code> 创建一个 Object 对象</li>
+</ol>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p><strong>重要公式</strong></p>
+<blockquote>
+<p>var 对象 = new 函数()<br>对象.<strong>proto</strong> === 对象的构造函数.prototype</p>
+<p>// 推论<br>var number = new Number()<br>number.<strong>proto</strong> = Number.prototype</p>
+<p>var object = new Object()<br>object.<strong>proto</strong> = Object.prototype</p>
+<p>var function = new Function()<br>function.<strong>proto</strong> = Function.prototype</p>
+<p>// 另外，所有函数都是由 Function 构造出来的，所以<br>Number.<strong>proto</strong> = Function.prototype // 因为 Number 是函数，是 Function 的实例<br>Object.<strong>proto</strong> = Function.prototype // 因为 Object 是函数，是 Function 的实例<br>Function.<strong>proto</strong> == Function.prototye // 因为 Function 是函数，是 Function 的实例！</p>
+</blockquote>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -283,7 +196,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.xml"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

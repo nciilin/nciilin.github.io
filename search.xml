@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>原型与原型链</title>
+      <link href="/2019/07/06/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+      <url>/2019/07/06/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="全局对象-window"><a href="#全局对象-window" class="headerlink" title="全局对象 window"></a>全局对象 window</h2><p><strong>window 的属性就是全局变量。</strong><br>window属性：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document" target="_blank" rel="noopener">window</a></p><h2 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h2><ol><li>Number<br><code>var n = new Number()</code>创建一个 Number 对象</li><li>String<br><code>var s = new String(&#39;hello&#39;)</code> 创建一个 String 对象</li><li>Boolean<br><code>var b = new Boolean(true)</code> 创建一个 Boolean 对象</li><li>Object<br><code>var o1 = {}</code> 创建一个 Object 对象<br><code>(var o2 = new Object()</code> 创建一个 Object 对象</li></ol><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p><strong>重要公式</strong></p><blockquote><p>var 对象 = new 函数()<br>对象.<strong>proto</strong> === 对象的构造函数.prototype</p><p>// 推论<br>var number = new Number()<br>number.<strong>proto</strong> = Number.prototype</p><p>var object = new Object()<br>object.<strong>proto</strong> = Object.prototype</p><p>var function = new Function()<br>function.<strong>proto</strong> = Function.prototype</p><p>// 另外，所有函数都是由 Function 构造出来的，所以<br>Number.<strong>proto</strong> = Function.prototype // 因为 Number 是函数，是 Function 的实例<br>Object.<strong>proto</strong> = Function.prototype // 因为 Object 是函数，是 Function 的实例<br>Function.<strong>proto</strong> == Function.prototye // 因为 Function 是函数，是 Function 的实例！</p></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>JS里的数据类型转换</title>
       <link href="/2019/07/05/%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
       <url>/2019/07/05/%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
