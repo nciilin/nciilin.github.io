@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        JS高级基础知识 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/">
+        </div>
+        <div class="name">
+            <i>Vincent</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原型"><span class="toc-text">原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#new-Fn-会执行-Fn，并打印出-this，请问这个-this-有哪些属性？这个-this-的原型有哪些属性？"><span class="toc-text">new Fn() 会执行 Fn，并打印出 this，请问这个 this 有哪些属性？这个 this 的原型有哪些属性？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-和-JavaScript-是什么关系？区别有哪些"><span class="toc-text">JSON 和 JavaScript 是什么关系？区别有哪些?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC-是什么？"><span class="toc-text">MVC 是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-ES5-中如何用函数模拟一个类"><span class="toc-text">在 ES5 中如何用函数模拟一个类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个返回-Promise-对象的函数"><span class="toc-text">创建一个返回 Promise 对象的函数</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        JS高级基础知识
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-07-25 13:38:06</span></span>
+        
+        
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var object = &#123;&#125;</span><br><span class="line">object.__proto__ === Object.prototype // 为 true</span><br><span class="line"></span><br><span class="line">var fn = function() &#123;&#125;</span><br><span class="line">fn.__proto__ === Function.prototype // 为 true</span><br><span class="line">fn.__proto__.__proto__ === Object.prototype // 为 true</span><br><span class="line"></span><br><span class="line">var array = []</span><br><span class="line">array.__proto__ === Array.prototype // 为 true</span><br><span class="line">array.__proto__.__proto__ === Object.prototype // 为 true</span><br><span class="line"></span><br><span class="line">Function.__proto__ === Function.prototype // 为 true</span><br><span class="line">Array.__proto__ === Function.prototype // 为 true</span><br><span class="line">Object.__proto__ === Function.prototype // 为 true</span><br><span class="line"></span><br><span class="line">true.__proto__ === Boolean.prototype // 为 true</span><br><span class="line"></span><br><span class="line">Function.prototype.__proto__ === Object.prototype // 为 true</span><br></pre></td></tr></table></figure>
+<h2 id="new-Fn-会执行-Fn，并打印出-this，请问这个-this-有哪些属性？这个-this-的原型有哪些属性？"><a href="#new-Fn-会执行-Fn，并打印出-this，请问这个-this-有哪些属性？这个-this-的原型有哪些属性？" class="headerlink" title="new Fn() 会执行 Fn，并打印出 this，请问这个 this 有哪些属性？这个 this 的原型有哪些属性？"></a>new Fn() 会执行 Fn，并打印出 this，请问这个 this 有哪些属性？这个 this 的原型有哪些属性？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function Fn() &#123;</span><br><span class="line">    console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">new Fn()</span><br></pre></td></tr></table></figure>
+<ol>
+<li>this 自身没有属性（只有一个隐藏的 <code>__proto__</code> 属性）；分为<strong>自有属性</strong>和<strong>共有属性</strong>。</li>
+<li>this 的原型是 fn.prototype，只有一个属性 <code>constructor</code> ，且 constructor === fn（另外还有一个隐藏属性 <code>__proto__</code> ，指向 <strong>Object.prototype</strong>）</li>
+</ol>
+<h2 id="JSON-和-JavaScript-是什么关系？区别有哪些"><a href="#JSON-和-JavaScript-是什么关系？区别有哪些" class="headerlink" title="JSON 和 JavaScript 是什么关系？区别有哪些?"></a>JSON 和 JavaScript 是什么关系？区别有哪些?</h2><ul>
+<li>JSON 和 JavaScript 是没有关系。</li>
+<li>JSON 是一门抄袭/借鉴 JavaScript 的语言，同时也是一种数据交互格式，JSON 是 JavaScript 的子集（或者说 JSON 只抄袭了一部分 JavaScript 语法，而且没有新增任何原创的语法）</li>
+</ul>
+<p>区别： </p>
+<ul>
+<li>JSON是一种轻量级的数据交换格式。语法上严格遵守使用双引号 <code>&quot;</code> ，是一个字符串。 <strong>不支持</strong>函数、undefined、变量、引用、单引号字符串、对象的key不支持单引号也不支持不加引号、没有内置的 Date、Math、RegExp 等。</li>
+<li>JavaScript是轻量级的脚本语言。并且JavaScript 全都支持。</li>
+</ul>
+<h2 id="MVC-是什么？"><a href="#MVC-是什么？" class="headerlink" title="MVC 是什么？"></a>MVC 是什么？</h2><p>MVC 是一种设计模式（或者软件架构），把系统分为三层：<strong>Model数据、View视图和Controller控制器</strong>。<br>Model 数据管理，包括数据逻辑、数据请求、数据存储等功能。前端 Model 主要负责 AJAX 请求或者 LocalStorage 存储<br>View 负责用户界面，前端 View 主要负责 HTML 渲染。<br>Controller 负责处理 View 的事件，并更新 Model；也负责监听 Model 的变化，并更新 View，Controller 控制其他的所有流程。</p>
+<ul>
+<li>控制器（Controller）- 负责转发请求，对请求进行处理。</li>
+<li>视图（View） - 界面设计人员进行图形界面设计。</li>
+<li>模型（Model） - 操作数据。程序员编写程序应有的功能（实现算法等等）、数据库专家进行数据管理和数据库设计(可以实现具体的功能)。</li>
+</ul>
+<p>Model 和服务器交互，Model 将得到的数据交给 Controller，Controller 把数据填入 View，并监听 View<br>用户操作 View，如点击按钮，Controller 就会接受到点击事件，Controller 这时会去调用 Model，Model 会与服务器交互，得到数据后返回给 Controller，Controller 得到数据就去更新 View</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">!function() &#123;</span><br><span class="line">  var model = &#123;</span><br><span class="line">      data: null,</span><br><span class="line">      init() &#123;&#125;</span><br><span class="line">      fetch() &#123;&#125;</span><br><span class="line">      save() &#123;&#125;</span><br><span class="line">      update() &#123;&#125;</span><br><span class="line">      delete() &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  view = &#123;</span><br><span class="line">      init() &#123;&#125;</span><br><span class="line">      template: &apos;&lt;h1&gt;hi&lt;/h1&apos; &gt;</span><br><span class="line">  &#125;</span><br><span class="line">  controller = &#123;</span><br><span class="line">      view: null,</span><br><span class="line">      model: null,</span><br><span class="line">      init(view, model) &#123;</span><br><span class="line">          this.view = view</span><br><span class="line">          this.model = model</span><br><span class="line">          this.bindEvents()</span><br><span class="line">      &#125;</span><br><span class="line">      render() &#123;</span><br><span class="line">          this.view.querySelector(&apos;name&apos;).innerText = this.model.data.name</span><br><span class="line">      &#125;,</span><br><span class="line">      bindEvents() &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  controller.init(view, model)</span><br><span class="line">&#125;.call()</span><br></pre></td></tr></table></figure>
+<h2 id="在-ES5-中如何用函数模拟一个类"><a href="#在-ES5-中如何用函数模拟一个类" class="headerlink" title="在 ES5 中如何用函数模拟一个类"></a>在 ES5 中如何用函数模拟一个类</h2><p>ES 5 没有 class 关键字，所以只能使用函数来模拟类。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Person(name, age) &#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.age = age</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.gender = function()&#123;&#125;</span><br><span class="line"></span><br><span class="line">var person = new Person(&apos;cai&apos;, &apos;16&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>上面代码就是一个最简单的类，Person 构造函数创建出来的对象自身有 name,age 属性，其原型上面有一个 gender 属性。</p>
+<h2 id="创建一个返回-Promise-对象的函数"><a href="#创建一个返回-Promise-对象的函数" class="headerlink" title="创建一个返回 Promise 对象的函数"></a>创建一个返回 Promise 对象的函数</h2><p>利用JQuery使用<strong>AJAX异步调用函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;url:&apos;/xxx&apos;, method:&apos;get&apos;&#125;).then(success1, error1).then(success2, error2)</span><br></pre></td></tr></table></figure></p>
+<p>创建 Promise 对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function asyncMethod()&#123;</span><br><span class="line">    return new Promise(function (resolve, reject)&#123;</span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line">            成功则调用 resolve</span><br><span class="line">            失败则调用 reject</span><br><span class="line">        &#125;,3000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
