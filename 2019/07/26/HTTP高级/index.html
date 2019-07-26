@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        HTTP高级 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/">
+        </div>
+        <div class="name">
+            <i>Vincent</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie-和-Session-的区别"><span class="toc-text">Cookie 和 Session 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie"><span class="toc-text">Cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session"><span class="toc-text">Session</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie-和-LocalStorage-的区别"><span class="toc-text">Cookie 和 LocalStorage 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LocalStorage-和-SessionStorage-的区别"><span class="toc-text">LocalStorage 和 SessionStorage 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LocalStorage"><span class="toc-text">LocalStorage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SessionStorage"><span class="toc-text">SessionStorage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie-如何设置过期时间？"><span class="toc-text">Cookie 如何设置过期时间？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何删除-Cookie？"><span class="toc-text">如何删除 Cookie？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？"><span class="toc-text">Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        HTTP高级
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-07-26 20:31:28</span></span>
+        
+        
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <h2 id="Cookie-和-Session-的区别"><a href="#Cookie-和-Session-的区别" class="headerlink" title="Cookie 和 Session 的区别"></a>Cookie 和 Session 的区别</h2><h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><ol>
+<li>服务器通过<code>Set-Cookie</code> 头给客户端一串字符串</li>
+<li>客户端每次访问相同域名的网页时，必须带上这串字符串</li>
+<li>客户端要在一小段时间内保持这个Cookie</li>
+<li>Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置Cookie的过期时间</li>
+</ol>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><ol>
+<li>将<code>SessionID</code>（随机数）通过Cookie发给客户端</li>
+<li>客户端访问服务器时，服务器读取<code>SessionID</code></li>
+<li>服务器有一小块内存（哈希表）保存了所有的session</li>
+<li>通过<code>SeesionID</code> 我们可以得到对应用户的隐私信息，如ID,Email</li>
+<li>这个内存（哈希表）就是服务器上的所有session</li>
+</ol>
+<p>区别： <strong>Session是基于Cookie实现的，使用Session防止用户cookie被篡改</strong></p>
+<h2 id="Cookie-和-LocalStorage-的区别"><a href="#Cookie-和-LocalStorage-的区别" class="headerlink" title="Cookie 和 LocalStorage 的区别"></a>Cookie 和 LocalStorage 的区别</h2><p>区别：<br><strong>Cookie</strong>是通过服务器使用HTTP协议进行cookie存储<br><strong>LocalStorage</strong> 跟 <strong>HTTP</strong> 无关，HTTP 不会带上 LocalStorage的值</p>
+<h2 id="LocalStorage-和-SessionStorage-的区别"><a href="#LocalStorage-和-SessionStorage-的区别" class="headerlink" title="LocalStorage 和 SessionStorage 的区别"></a>LocalStorage 和 SessionStorage 的区别</h2><h3 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h3><ol>
+<li>LocalStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 LocalStorage的值</li>
+<li>只有相同域名的页面才能互相读取 LocalStorage （没有同源那么严格）</li>
+<li>每个域名 LocalStorage 最大存储量为 5MB 左右 （每个浏览器不一样）</li>
+<li>常用场景： 记录有没有提示过用户（主要是记录没有用的信息，不能记录密码）</li>
+<li>LocalStorage 永久有效， 除非用户清理缓存</li>
+</ol>
+<h3 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h3><ol>
+<li>LocalStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 LocalStorage的值</li>
+<li>只有相同域名的页面才能互相读取 LocalStorage （没有同源那么严格）</li>
+<li>每个域名 LocalStorage 最大存储量为 5MB 左右 （每个浏览器不一样）</li>
+</ol>
+<p>区别：<br><strong>LocalStorage 永久有效， 除非用户清理缓存</strong><br><strong>SessionStorage 在用户关闭页面（会话结束）后就失效</strong></p>
+<h2 id="Cookie-如何设置过期时间？"><a href="#Cookie-如何设置过期时间？" class="headerlink" title="Cookie 如何设置过期时间？"></a>Cookie 如何设置过期时间？</h2><ul>
+<li>通过max-age,将max-age设置为正数的时候,数值即为cookie的有效时间,设置为负数或零就可以将cookie删除.</li>
+<li>通过expires来设置,但时间格式要用GMT或者UTC来表示</li>
+</ul>
+<h2 id="如何删除-Cookie？"><a href="#如何删除-Cookie？" class="headerlink" title="如何删除 Cookie？"></a>如何删除 Cookie？</h2><blockquote>
+<ol>
+<li>打开Chrome浏览器 。 …</li>
+<li>点击Chrome浏览器右上角的⋮。 屏幕上会出现一个下拉菜单。</li>
+<li>选择靠近菜单底部的更多工具。 …</li>
+<li>点击靠近弹出菜单顶端的清除浏览数据，在新的标签页中打开浏览数据偏好设置。</li>
+<li>一定要勾选“Cookie及其它网站数据”。 …</li>
+<li>选择时间不限。 …</li>
+<li>点击窗口右下角的清除数据，删除浏览器的所有Cookie。</li>
+</ol>
+</blockquote>
+<h2 id="Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？"><a href="#Cache-Control-max-age-1000-缓存-与-ETag-的「缓存」有什么区别？" class="headerlink" title="Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？"></a>Cache-Control: max-age=1000 缓存 与 ETag 的「缓存」有什么区别？</h2><p>区别：<br><code>Cache-Control: max-age=1000</code>是设置缓存1000毫秒内不发请求，超出后才发出请求。<br><code>Etag</code>是不下载文件，但还是要发出请求。发出请求后，检查<code>if-None-Match</code>信息，通过对比浏览器缓存文件的md5与服务器对应文件的md5是否一致,来确定是否可以利用缓存,只要md5一致,那么不会有响应体,直接用缓存</p>
+<p>推荐优先使用<code>Cache-Control</code></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
