@@ -144,8 +144,8 @@
 <li>通过<code>SeesionID</code> 我们可以得到对应用户的隐私信息，如ID,Email</li>
 <li>这个内存（哈希表）就是服务器上的所有session</li>
 </ol>
-<p>区别： <strong>Session是基于Cookie实现的，使用Session防止用户cookie被篡改</strong></p>
-<h2 id="Cookie-和-LocalStorage-的区别"><a href="#Cookie-和-LocalStorage-的区别" class="headerlink" title="Cookie 和 LocalStorage 的区别"></a>Cookie 和 LocalStorage 的区别</h2><p>区别：<br><strong>Cookie</strong>是通过服务器使用HTTP协议进行cookie存储<br><strong>LocalStorage</strong> 跟 <strong>HTTP</strong> 无关，HTTP 不会带上 LocalStorage的值</p>
+<p>区别：<br><strong>Session是基于Cookie实现的，使用Session防止用户cookie被篡改</strong><br><strong>Cookie 保存在客户端，每次都随请求发送给 Server</strong><br><strong>Session 保存在 Server 的内存里，其 Session ID 是通过 Cookie 发送给客户端的</strong></p>
+<h2 id="Cookie-和-LocalStorage-的区别"><a href="#Cookie-和-LocalStorage-的区别" class="headerlink" title="Cookie 和 LocalStorage 的区别"></a>Cookie 和 LocalStorage 的区别</h2><p>区别：<br><strong>Cookie</strong>是通过服务器使用HTTP协议进行cookie存储<br><strong>LocalStorage</strong> 跟 <strong>HTTP</strong> 无关，HTTP 不会带上 LocalStorage的值<br><strong>LocalStorage</strong> 的大小限制比 <strong>Cookie</strong> 大多了</p>
 <h2 id="LocalStorage-和-SessionStorage-的区别"><a href="#LocalStorage-和-SessionStorage-的区别" class="headerlink" title="LocalStorage 和 SessionStorage 的区别"></a>LocalStorage 和 SessionStorage 的区别</h2><h3 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h3><ol>
 <li>LocalStorage 跟 HTTP 无关</li>
 <li>HTTP 不会带上 LocalStorage的值</li>
