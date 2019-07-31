@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        ES6新特性 - undefined
         
     </title>
 
@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li class="active">
+            <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>HOME</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#let-和-const命令"><span class="toc-text">let 和 const命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#let"><span class="toc-text">let</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const"><span class="toc-text">const</span></a></li></ol></li></ol>
+</div>
+    
 </div>
 
 
@@ -111,158 +115,46 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-31</div>
-        <div class="post-info">
-            <a href="/2019/07/31/ES6新特性/">
-                <h3>
-                    ES6新特性
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-26</div>
-        <div class="post-info">
-            <a href="/2019/07/26/HTTP高级/">
-                <h3>
-                    HTTP高级
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-25</div>
-        <div class="post-info">
-            <a href="/2019/07/25/JS高级基础知识/">
-                <h3>
-                    JS高级基础知识
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-19</div>
-        <div class="post-info">
-            <a href="/2019/07/19/JSONP_跨域_AJAX/">
-                <h3>
-                    JSONP_跨域_AJAX
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-15</div>
-        <div class="post-info">
-            <a href="/2019/07/15/面试题/">
-                <h3>
-                    面试题
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-07</div>
-        <div class="post-info">
-            <a href="/2019/07/07/JS操作DOM常用API/">
-                <h3>
-                    JS操作DOM常用API
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-06</div>
-        <div class="post-info">
-            <a href="/2019/07/06/原型与原型链/">
-                <h3>
-                    原型与原型链
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-05</div>
-        <div class="post-info">
-            <a href="/2019/07/05/JS里的数据类型转换/">
-                <h3>
-                    JS里的数据类型转换
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2019-07-05</div>
-        <div class="post-info">
-            <a href="/2019/07/05/JS里的数据类型/">
-                <h3>
-                    JS里的数据类型
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-11</div>
-        <div class="post-info">
-            <a href="/2018/12/11/CSS布局/">
-                <h3>
-                    CSS布局
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page/2/">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
 
+
+<div class="post-container">
+    <div class="post-title">
+        ES6新特性
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2019-07-31 21:53:01</span></span>
+        
+        
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>参考： <a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">阮一峰ES6</a></p>
+<h2 id="let-和-const命令"><a href="#let-和-const命令" class="headerlink" title="let 和 const命令"></a>let 和 const命令</h2><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><ol>
+<li><code>let</code> 的作用域在最新的{}之间</li>
+<li>如果在<code>let a</code> 之前使用了a，那么报错</li>
+<li>如果重复声明<code>let a</code>，那么报错</li>
+</ol>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><ol>
+<li><code>let</code> 的作用域在最新的{}之间</li>
+<li>如果在<code>let a</code> 之前使用了a，那么报错</li>
+<li>如果重复声明<code>let a</code>，那么报错</li>
+<li>只有一次赋值的机会，而且必须在声明的时候立马赋值</li>
+</ol>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -301,7 +193,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.xml"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

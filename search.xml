@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>ES6新特性</title>
+      <link href="/2019/07/31/ES6%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+      <url>/2019/07/31/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<p>参考： <a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">阮一峰ES6</a></p><h2 id="let-和-const命令"><a href="#let-和-const命令" class="headerlink" title="let 和 const命令"></a>let 和 const命令</h2><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><ol><li><code>let</code> 的作用域在最新的{}之间</li><li>如果在<code>let a</code> 之前使用了a，那么报错</li><li>如果重复声明<code>let a</code>，那么报错</li></ol><h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><ol><li><code>let</code> 的作用域在最新的{}之间</li><li>如果在<code>let a</code> 之前使用了a，那么报错</li><li>如果重复声明<code>let a</code>，那么报错</li><li>只有一次赋值的机会，而且必须在声明的时候立马赋值</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>HTTP高级</title>
       <link href="/2019/07/26/HTTP%E9%AB%98%E7%BA%A7/"/>
       <url>/2019/07/26/HTTP%E9%AB%98%E7%BA%A7/</url>
