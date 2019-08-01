@@ -56,32 +56,32 @@
             <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
-                    <span>HOME</span>
+                    <span>主页</span>
                 </a>
             </li>
             <li>
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
-                    <span>TAGS</span>
+                    <span>标签</span>
                 </a>
             </li>
             <li>
                 <a href="/archives">
                     <i class="iconfont icon-guidang2"></i>
-                    <span>ARCHIVES</span>
+                    <span>存档</span>
                 </a>
             </li>
             <li>
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
-                    <span>ABOUT</span>
+                    <span>关于</span>
                 </a>
             </li>
             
             <li>
                 <a id="search">
                     <i class="iconfont icon-sousuo1"></i>
-                    <span>SEARCH</span>
+                    <span>搜索</span>
                 </a>
             </li>
             
@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#let-和-const命令"><span class="toc-text">let 和 const命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#let"><span class="toc-text">let</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const"><span class="toc-text">const</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#let-和-const命令"><span class="toc-text">let 和 const命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#let"><span class="toc-text">let</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const"><span class="toc-text">const</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数与对象的语法糖"><span class="toc-text">函数与对象的语法糖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新的字符串"><span class="toc-text">新的字符串</span></a></li></ol>
 </div>
     
 </div>
@@ -100,7 +100,7 @@
         <div class="search-input">
             <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
             <input id="search-input">
-            <span id="begin-search">search</span>
+            <span id="begin-search">搜索</span>
         </div>
         <div class="search-result-container" id="search-result-container">
 
@@ -123,10 +123,10 @@
     </div>
 
     <div class="post-meta">
-        <span class="attr">Post：<span>2019-07-31 21:53:01</span></span>
+        <span class="attr">发布于：<span>2019-07-31 21:53:01</span></span>
         
         
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
 </span>
 
     </div>
@@ -142,6 +142,32 @@
 <li>如果在<code>let a</code> 之前使用了a，那么报错</li>
 <li>如果重复声明<code>let a</code>，那么报错</li>
 <li>只有一次赋值的机会，而且必须在声明的时候立马赋值</li>
+</ol>
+<h3 id="函数与对象的语法糖"><a href="#函数与对象的语法糖" class="headerlink" title="函数与对象的语法糖"></a>函数与对象的语法糖</h3><ol>
+<li><p>将伪数组转为真数组方法<br><code>function sum(message, ...numbers) {</code>let args = Array.prototype.slice.call(argumengs)<code>// ES5</code>let args = Array.from(argumengs)<code>// ES6</code>let args = […argumeng]<code>// ES6
+resule = numbers.reduce( (p , v ) =&gt; p + v, 0)
+return message + result
+}
+sum(&#39;结果是: &#39;, 1,2,3,4,5) // 15</code></p>
+</li>
+<li><p>展开操作</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...iterableObj] = [1, 3, 5, 7, 9]; </span><br><span class="line">[0, 2, `...iterableObj`, 4, 6, 8];</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>结构赋值</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[a, b] = [b, a]</span><br><span class="line">[a, b, ...rest] = [10, 20, 30, 40, 50]</span><br><span class="line">let &#123;name, age&#125; = frank</span><br><span class="line">[a=5, b=7] = [1];</span><br><span class="line">[a, b] = f()</span><br><span class="line">[a, , b] = f();</span><br><span class="line">&#123;p: foo, q: bar&#125; = o</span><br><span class="line">let &#123;a = 10, b = 5&#125; = &#123;a: 3&#125;;</span><br><span class="line">let &#123;a:aa = 10, b:bb = 5&#125; = &#123;a: 3&#125;;</span><br><span class="line">对象浅拷贝</span><br><span class="line">  - let objB = Object.assign(&#123;&#125;, objA) // ES5</span><br><span class="line">  - let objB = `&#123;...objA&#125;` // ES6</span><br><span class="line">对象合并</span><br><span class="line">  - let objB = Object.assign(&#123;&#125;, objA, objC) // ES5</span><br><span class="line">  - let objB = `&#123;...objA, ...objC&#125;` // ES6</span><br></pre></td></tr></table></figure>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC" target="_blank" rel="noopener">MDN 上更多的例子</a></p>
+<ol start="4">
+<li>对象属性加强</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj = &#123; x, y &#125; // obj = &#123;x:x, y: y&#125;</span><br><span class="line">obj = &#123;[&quot;baz&quot; + quux() ]: 42&#125;</span><br><span class="line">函数属性可以缩写</span><br></pre></td></tr></table></figure>
+<h2 id="新的字符串"><a href="#新的字符串" class="headerlink" title="新的字符串"></a>新的字符串</h2><ol>
+<li>多行字符串<strong><code></code></strong></li>
+<li>字符串里插入变量（插值）<strong><code>${}</code></strong></li>
+<li>函数接字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fn`$&#123;name&#125; 是一个 $&#123;person&#125;`</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
         
