@@ -145,27 +145,15 @@
 </ol>
 <h2 id="函数与对象的语法糖"><a href="#函数与对象的语法糖" class="headerlink" title="函数与对象的语法糖"></a>函数与对象的语法糖</h2><h3 id="将伪数组转为真数组方法"><a href="#将伪数组转为真数组方法" class="headerlink" title="将伪数组转为真数组方法"></a>将伪数组转为真数组方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function sum(message, ...numbers) &#123;</span><br><span class="line">  `let args = Array.prototype.slice.call(argumengs)` // ES5</span><br><span class="line">  `let args = Array.from(argumengs)` // ES6</span><br><span class="line">  `let args = [...argumeng]` // ES6</span><br><span class="line">  resule = numbers.reduce( (p , v ) =&gt; p + v, 0)</span><br><span class="line">  return message + result</span><br><span class="line">&#125;</span><br><span class="line">sum(&apos;结果是: &apos;, 1,2,3,4,5) // 15</span><br></pre></td></tr></table></figure>
 <h3 id="展开操作"><a href="#展开操作" class="headerlink" title="展开操作"></a>展开操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...iterableObj] = [1, 3, 5, 7, 9]; </span><br><span class="line">[0, 2, `...iterableObj`, 4, 6, 8];</span><br></pre></td></tr></table></figure>
-<h3 id="结构赋值"><a href="#结构赋值" class="headerlink" title="结构赋值"></a>结构赋值</h3><ol>
-<li>[a, b] = [b, a]</li>
-<li>[a, b, …rest] = [10, 20, 30, 40, 50]</li>
-<li>let {name, age} = frank</li>
-<li>[a=5, b=7] = [1];</li>
-<li>[a, b] = f()</li>
-<li>[a, , b] = f();</li>
-<li>{p: foo, q: bar} = o</li>
-<li>let {a = 10, b = 5} = {a: 3};</li>
-<li>let {a:aa = 10, b:bb = 5} = {a: 3};</li>
-<li>对象浅拷贝<ul>
+<h3 id="结构赋值"><a href="#结构赋值" class="headerlink" title="结构赋值"></a>结构赋值</h3><blockquote>
+<p>[a, b] = [b, a]<br>[a, b, …rest] = [10, 20, 30, 40, 50]<br>let {name, age} = frank<br>[a=5, b=7] = [1];<br>[a, b] = f()<br>[a, , b] = f();<br>{p: foo, q: bar} = o<br>let {a = 10, b = 5} = {a: 3};<br>let {a:aa = 10, b:bb = 5} = {a: 3};<br>对象浅拷贝</p>
+<ul>
 <li>let objB = Object.assign({}, objA) // ES5</li>
-<li>let objB = <code>{...objA}</code> // ES6</li>
-</ul>
-</li>
-<li>对象合并<ul>
+<li>let objB = <code>{...objA}</code> // ES6<br>对象合并</li>
 <li>let objB = Object.assign({}, objA, objC) // ES5</li>
 <li>let objB = <code>{...objA, ...objC}</code> // ES6</li>
 </ul>
-</li>
-</ol>
+</blockquote>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC" target="_blank" rel="noopener">MDN 上更多的例子</a></p>
 <h3 id="对象属性加强"><a href="#对象属性加强" class="headerlink" title="对象属性加强"></a>对象属性加强</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj = &#123; x, y &#125; // obj = &#123;x:x, y: y&#125;</span><br><span class="line">obj = &#123;[&quot;baz&quot; + quux() ]: 42&#125;</span><br><span class="line">函数属性可以缩写</span><br></pre></td></tr></table></figure>
 <h2 id="新的字符串"><a href="#新的字符串" class="headerlink" title="新的字符串"></a>新的字符串</h2><ol>
@@ -190,8 +178,7 @@
 <blockquote>
 <p>export { name1, name2, …, nameN };<br>export { variable1 as name1, variable2 as name2, …, nameN };<br>export default expression;<br>export { default } from …;</p>
 </blockquote>
-<h2 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h2><p>类：实际上是个“特殊的函数”，<strong>拥有相同属性的对象</strong>类语法有两个组成部分：类表达式和类声明。<br>构造函数： <strong>用来创建某个类的对象的函数</strong></p>
-<p><code>new</code>、<code>get</code>、<code>set</code>、<br><code>constructor</code>：指向对象的原型的属性<br><code>static</code>：关键字用来定义一个类的一个静态方法<br><code>extends</code>：关键字在类声明或类表达式中用于创建一个类作为另一个类的一个子类。<br><code>super</code>： 关键字用于调用对象的父对象上的函数。</p>
+<h2 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h2><p>类：实际上是个“特殊的函数”，<strong>拥有相同属性的对象</strong>类语法有两个组成部分：类表达式和类声明。<br>构造函数： <strong>用来创建某个类的对象的函数</strong><br><code>new</code><br><code>get</code><br><code>set</code><br><code>constructor</code>：指向对象的原型的属性<br><code>static</code>：关键字用来定义一个类的一个静态方法<br><code>extends</code>：关键字在类声明或类表达式中用于创建一个类作为另一个类的一个子类<br><code>super</code>： 关键字用于调用对象的父对象上的函数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Rectangle &#123;</span><br><span class="line">    // constructor </span><br><span class="line">    constructor(height, width) &#123;</span><br><span class="line">        this.height = height;</span><br><span class="line">        this.width = width;</span><br><span class="line">    &#125;</span><br><span class="line">    // Getter</span><br><span class="line">    get area() &#123;</span><br><span class="line">        return this.calcArea()</span><br><span class="line">    &#125;</span><br><span class="line">    // Method</span><br><span class="line">    calcArea() &#123;</span><br><span class="line">        return this.height * this.width;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const square = new Rectangle(10, 10);</span><br><span class="line"></span><br><span class="line">console.log(square.area);</span><br><span class="line">// 100</span><br></pre></td></tr></table></figure>
 <h2 id="Promise回调"><a href="#Promise回调" class="headerlink" title="Promise回调"></a>Promise回调</h2><ol>
 <li><p>回调</p>
