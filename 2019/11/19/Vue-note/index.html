@@ -131,7 +131,7 @@
 
     </div>
     <div class="post-content ">
-        <h2 id="Vue学习笔记"><a href="#Vue学习笔记" class="headerlink" title="Vue学习笔记"></a>Vue学习笔记</h2><h3 id="Vue-js-是什么"><a href="#Vue-js-是什么" class="headerlink" title="Vue.js 是什么"></a>Vue.js 是什么</h3><p>Vue是一套用于构造用户界面的<strong>渐进式框架</strong>，遵循<code>MVVM</code>模型。<br>Model(模型)：数据保存 View(视图): 用户界面。<br>采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel上，反之亦然。<br><img src="./img/MVVM.png" alt="MVVM"></p>
+        <h2 id="Vue学习笔记"><a href="#Vue学习笔记" class="headerlink" title="Vue学习笔记"></a>Vue学习笔记</h2><h3 id="Vue-js-是什么"><a href="#Vue-js-是什么" class="headerlink" title="Vue.js 是什么"></a>Vue.js 是什么</h3><p>Vue是一套用于构造用户界面的<strong>渐进式框架</strong>，遵循<code>MVVM</code>模型。<br>Model(模型)：数据保存 View(视图): 用户界面。<br>采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel上，反之亦然。<br><img src="../img/MVVM.png" alt="MVVM"></p>
 <h3 id="Vue特性"><a href="#Vue特性" class="headerlink" title="Vue特性"></a>Vue特性</h3><h4 id="v-bind绑定"><a href="#v-bind绑定" class="headerlink" title="v-bind绑定"></a>v-bind绑定</h4><p><code>v-bind:title=&quot;message&quot;</code><br>  将这个元素节点的 title 特性和 Vue 实例的 message 属性保持一致。</p>
 <h4 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h4><p><code>&lt;li v-for=&quot;todo in todos&quot;&gt;&lt;/li&gt;</code><br>  绑定数组的数据来渲染一个项目列表</p>
 <h4 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h4><p><code>&lt;button v-on:click=&quot;reverseMessage&quot;&gt;反转消息&lt;/button&gt;</code><br>  添加一个事件监听器，通过它调用在 Vue 实例中定义的方法</p>
@@ -142,7 +142,7 @@
 <h3 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h3><h4 id="创建一个Vue实例"><a href="#创建一个Vue实例" class="headerlink" title="创建一个Vue实例"></a>创建一个Vue实例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  // 选项</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>  vm(ViewModel)这个变量名便是Vue实例</p>
 <h4 id="数据与方法"><a href="#数据与方法" class="headerlink" title="数据与方法"></a>数据与方法</h4><p>  实例中<code>data</code>中的属性是响应式，使用<code>Object.freeze()</code>，这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。<br>  <code>$</code>表示Vue实例</p>
-<h4 id="实例生命周期钩子"><a href="#实例生命周期钩子" class="headerlink" title="实例生命周期钩子"></a>实例生命周期钩子</h4><p>  生命周期函数就是Vue在某一个时间点会自动执行的函数<br>  <img src="./img/lifecycle" alt="生命周期钩子"></p>
+<h4 id="实例生命周期钩子"><a href="#实例生命周期钩子" class="headerlink" title="实例生命周期钩子"></a>实例生命周期钩子</h4><p>  生命周期函数就是Vue在某一个时间点会自动执行的函数<br>  <img src="../img/lifecycle" alt="生命周期钩子"></p>
 
         
         <br>
